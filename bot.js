@@ -1,6 +1,6 @@
 ﻿const Discord = require('discord.js');
 const client = new Discord.Client();
-
+const prefix = "1"
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);  
@@ -16,11 +16,14 @@ var channel = "510241151895470096";//ايدي الروم
 
 
 client.on('message', message => {
-if(message.content.startsWith('bank1')) {
-if(message.author.id !== "510252385663320065") return;
+if(message.content.startsWith(prefix+ 's')) {
+if(message.author.id !== "314135031029170197") return;
 var args = message.content.split(' ').slice(1).join(' ');
-message.channel.send();
+message.channel.send(args);
 }
 });
+
+
+
  
 client.login(process.env.BOT_TOKEN);
